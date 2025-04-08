@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace QuoteMachine_ExerciceGit
 {
@@ -26,7 +28,11 @@ namespace QuoteMachine_ExerciceGit
             //GetRandomQuote_ShouldReturnNonNullQuote
 
             //Avant de créer votre PR, faites un git rebase sur main pour vous assurer que vous avez la dernière version du code.
-            throw new NotImplementedException("À implémenter dans feature/random-quote");
+            Random rnd = new Random();
+
+            int r = rnd.Next(_quotes.Count);
+
+            return _quotes[r]; // Retourne une citation aléatoire
         }
 
         public void AddQuote(string text, string author)
