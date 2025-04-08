@@ -11,22 +11,22 @@ namespace QuoteMachineTests
             _manager = new QuoteManager();
         }
 
-        //[Fact]
-        //public void GetRandomQuote_ShouldReturnNonNullQuote()
-        //{
-        //    var quote = _manager.GetRandomQuote();
-        //    Assert.NotNull(quote);
-        //    Assert.IsType<Quote>(quote);
-        //}
+        [Fact]
+        public void GetRandomQuote_ShouldReturnNonNullQuote()
+        {
+            var quote = _manager.GetRandomQuote();
+            Assert.NotNull(quote);
+            Assert.IsType<Quote>(quote);
+        }
 
-        //[Fact]
-        //public void AddQuote_ShouldIncreaseQuoteCount()
-        //{
-        //    int countBefore = _manager.GetAllQuotes().Count;
-        //    _manager.AddQuote("Test", "Moi");
-        //    int countAfter = _manager.GetAllQuotes().Count;
-        //    Assert.Equal(++countBefore, countAfter);
-        //}
+        [Fact]
+        public void AddQuote_ShouldIncreaseQuoteCount()
+        {
+            int countBefore = _manager.GetAllQuotes().Count;
+            _manager.AddQuote("Test", "Moi");
+            int countAfter = _manager.GetAllQuotes().Count;
+            Assert.Equal(++countBefore, countAfter);
+        }
 
         //[Fact]
         //public void SaveToFile_ShouldCreateFile()
